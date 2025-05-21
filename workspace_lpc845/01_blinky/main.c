@@ -1,7 +1,7 @@
 # include "board.h"
 
 //Etiquetas
-#define LED_BLUE  GPIO<1,1
+#define LED_BLUE  GPIO,1,1
 #define delay(t)  for(uint32_t i = 0; i < t; i++); 
 
 int main(void) {
