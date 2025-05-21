@@ -1,0 +1,10 @@
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/CMSIS/Core/Include/./core_cm0plus.h:757:22:__NVIC_EnableIRQ	16	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/CMSIS/Core/Include/./core_cm0plus.h:795:22:__NVIC_DisableIRQ	16	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_common_arm.h:667:24:EnableIRQ	24	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_common_arm.h:717:24:DisableIRQ	24	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_power.c:25:6:POWER_EnterSleep	24	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_power.c:50:6:POWER_EnterDeepSleep	32	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_power.c:81:6:POWER_EnterPowerDown	32	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_power.c:111:6:POWER_EnterDeepPowerDownMode	24	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_power.c:132:6:EnableDeepSleepIRQ	24	static
+/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_power.c:150:6:DisableDeepSleepIRQ	24	static
