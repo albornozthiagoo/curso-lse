@@ -1,3 +1,0 @@
-/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_reset.c:30:6:RESET_SetPeripheralReset	32	static
-/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_reset.c:52:6:RESET_ClearPeripheralReset	32	static
-/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_reset.c:82:6:RESET_PeripheralReset	16	static
