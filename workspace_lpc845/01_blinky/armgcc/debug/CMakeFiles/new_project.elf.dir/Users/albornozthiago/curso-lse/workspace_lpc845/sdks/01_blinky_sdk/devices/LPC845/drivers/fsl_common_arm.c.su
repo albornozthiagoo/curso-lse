@@ -1,0 +1,2 @@
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_common_arm.c:175:13:DelayLoop	16	static
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_common_arm.c:205:6:SDK_DelayAtLeastUs	40	static

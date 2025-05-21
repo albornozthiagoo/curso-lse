@@ -1,0 +1,3 @@
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/system_LPC845.c:71:6:SystemInit	8	static
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/system_LPC845.c:88:6:SystemCoreClockUpdate	16	static
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/system_LPC845.c:176:29:SystemInitHook	8	static

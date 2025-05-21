@@ -1,0 +1,4 @@
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_clock.h:558:20:CLOCK_EnableClock	16	static
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_gpio.c:42:13:GPIO_EnablePortClock	16	static
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_gpio.c:60:6:GPIO_PortInit	16	static
+/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk/devices/LPC845/drivers/fsl_gpio.c:97:6:GPIO_PinInit	24	static
