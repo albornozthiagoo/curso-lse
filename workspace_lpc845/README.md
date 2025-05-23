@@ -12,14 +12,8 @@ Cada ejercicio está organizado en su propia carpeta de clase dentro del workspa
 - **Placa de desarrollo:** LPC845-BRK
 - **IDE:** MCUXpresso IDE
 - **Lenguaje de programación:** C
-- **Control de versiones:** Git
 
 ## 📦 Notas
 
 - El directorio `debug/` está excluido del repositorio mediante `.gitignore`, ya que contiene archivos generados automáticamente.
-- Cada carpeta de ejercicio contiene su propio `main.c` y configuración del proyecto.
 
-## 🧠 Objetivos
-
-- Aprender desarrollo embebido con microcontroladores NXP.
-- Aplicar buenas prácticas en proyectos de firmware.
