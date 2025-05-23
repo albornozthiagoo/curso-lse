@@ -1,0 +1,33 @@
+{
+  "version": 7,
+  "cmakeMinimumRequired": {
+    "major": 3
+  },
+  "configurePresets": [
+    {
+      "name": "debug-env",
+      "displayName": "debug-env",
+      "hidden": true,
+      "environment": {
+        "ARMGCC_DIR": "/Applications/MCUXpressoIDE_24.12.148/ide/tools",
+        "SdkRootDirPath": "/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk",
+        "POSTPROCESS_UTILITY": "/Users/albornozthiago/.mcuxpressotools/mcux-fixelf/mcux-fixelf",
+        "MCUX_VENV_PATH": "/Users/albornozthiago/.mcuxpressotools/.venv/bin",
+        "PATH": "$env{MCUX_VENV_PATH}:$penv{PATH}"
+      }
+    },
+    {
+      "name": "release-env",
+      "displayName": "release-env",
+      "hidden": true,
+      "environment": {
+        "ARMGCC_DIR": "/Applications/MCUXpressoIDE_24.12.148/ide/tools",
+        "SdkRootDirPath": "/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_blinky_sdk",
+        "POSTPROCESS_UTILITY": "/Users/albornozthiago/.mcuxpressotools/mcux-fixelf/mcux-fixelf",
+        "MCUX_VENV_PATH": "/Users/albornozthiago/.mcuxpressotools/.venv/bin",
+        "PATH": "$env{MCUX_VENV_PATH}:$penv{PATH}"
+      }
+    }
+  ],
+  "buildPresets": []
+}
