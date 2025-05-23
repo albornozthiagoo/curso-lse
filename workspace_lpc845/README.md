@@ -8,9 +8,11 @@ Cada ejercicio está organizado en su propia carpeta de clase dentro del workspa
 
 ## ⚙️ Herramientas utilizadas
 
-- MCU: **NXP LPC845**
-- IDE: **MCUXpresso IDE** 
-- Lenguaje: **C**
+- **Microcontrolador:** NXP LPC845
+- **Placa de desarrollo:** LPC845-BRK
+- **IDE:** MCUXpresso IDE
+- **Lenguaje de programación:** C
+- **Control de versiones:** Git
 
 ## 📦 Notas
 
