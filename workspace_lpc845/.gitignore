@@ -1,15 +1,1 @@
-# Ignorar todo dentro de 01_animation excepto main.c
-01_animation/*
-!01_animation/main.c
 
-# Ignorar todo dentro de 01_blinky excepto main.c
-01_blinky/*
-!01_blinky/main.c
-
-# Ignorar carpetas y archivos del entorno de desarrollo
-.vscode/
-__repo__/
-*.mex
-*.xml
-sdks/
-armgcc/
