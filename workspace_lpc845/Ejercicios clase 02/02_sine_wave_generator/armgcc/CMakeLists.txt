@@ -56,6 +56,7 @@ add_executable(${MCUX_SDK_PROJECT_NAME}
 "${ProjDirPath}/../hardware_init.c"
 "${ProjDirPath}/../app.h"
 "${ProjDirPath}/../mcux_config.h"
+"${SdkRootDirPath}/devices/LPC845/drivers/fsl_dac.c"
 )
 
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PRIVATE
