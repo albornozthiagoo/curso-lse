@@ -51,7 +51,7 @@ void display_digit(int digit)
     GPIO_PinWrite(LED_G, !((seg >> 6) & 1));
 
     // Activa solo el dígito izquierdo (A1)
-    GPIO_PinWrite(GPIO, 0, 8, 1); // A1 en bajo (activo)
+    GPIO_PinWrite(GPIO, 0, 8, 0); // A1 en bajo (activo)
     GPIO_PinWrite(GPIO, 0, 9, 1); // A2 en alto (apagado)
 }
 
