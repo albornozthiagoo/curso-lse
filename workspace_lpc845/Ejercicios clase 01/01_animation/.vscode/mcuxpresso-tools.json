@@ -6,8 +6,8 @@
   "multicoreType": "none",
   "projectType": "sdk-freestanding",
   "sdk": {
+    "path": "/Users/albornozthiago/Documents/UTN_2025/curso-lse/workspace_lpc845/Ejercicios clase 02/sdks/02_sine_wave_generator_sdk",
     "version": "25.03.00",
-    "path": "/Users/albornozthiago/curso-lse/workspace_lpc845/sdks/01_animation_sdk",
     "boardId": "lpc845breakout",
     "deviceId": "LPC845",
     "coreId": "core0_LPC845"
