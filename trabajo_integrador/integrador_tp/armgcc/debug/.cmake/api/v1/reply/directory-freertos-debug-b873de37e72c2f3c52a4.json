@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "freertos",
+		"source" : "/Users/albornozthiago/Documents/UTN_2025/curso-lse/trabajo_integrador/freertos"
+	}
+}
