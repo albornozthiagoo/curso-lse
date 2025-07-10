@@ -358,7 +358,7 @@ button_status_t BUTTON_Init(button_handle_t buttonHandle, button_config_t *butto
 #if defined(OSA_USED)
 
 #if (defined(BUTTON_USE_COMMON_TASK) && (BUTTON_USE_COMMON_TASK > 0U))
-        (void)COMMON_TASK_init();
+        (void)COMMON_tarea_inicc();
 #else
         osa_status_t osaStatus;
 

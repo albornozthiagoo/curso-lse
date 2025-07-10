@@ -58,6 +58,7 @@ add_executable(${MCUX_SDK_PROJECT_NAME}
 "${SdkRootDirPath}/devices/LPC845/drivers/fsl_sctimer.c"
 "${SdkRootDirPath}/devices/LPC845/drivers/fsl_pint.c"
 "${SdkRootDirPath}/devices/LPC845/drivers/fsl_gpio.c"
+"${SdkRootDirPath}/devices/LPC845/drivers/fsl_capt.c"
 )
 
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PRIVATE

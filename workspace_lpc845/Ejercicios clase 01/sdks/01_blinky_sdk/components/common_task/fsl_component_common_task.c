@@ -66,7 +66,7 @@ void COMMON_TASK_task(osa_task_param_t param)
     } while (gUseRtos_c);
 }
 
-common_task_status_t COMMON_TASK_init(void)
+common_task_status_t COMMON_tarea_inic(void)
 {
     osa_status_t status;
 

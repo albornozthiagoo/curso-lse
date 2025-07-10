@@ -45,18 +45,18 @@
 extern TaskHandle_t handle_display;
 
 // Prototipos de funciones
-void task_init(void *params);
-void task_adc(void *params);
-void task_display_change(void *params);
-void task_control(void *params);
-void task_display(void *params);
-void task_pwm(void *params);
-void task_bh1750(void *params);
-void task_animation(void *params);
-void task_blinky(void *params);
-void task_buzzer(void *params);
-void task_counter(void *params);
-void task_counter_btns(void *params);
+void tarea_inic(void *params);
+void tarea_adc(void *params);
+void tarea_display_change(void *params);
+void tarea_control(void *params);
+void tarea_display(void *params);
+void tarea_pwm(void *params);
+void tarea_bh1750(void *params);
+void tarea_animation(void *params);
+void tarea_blinky(void *params);
+void tarea_buzzer(void *params);
+void tarea_contador(void *params);
+void tarea_contador_btns(void *params);
 
 /**
  * @brief Wrapper que verifica el estado de un pulsador con pull-up

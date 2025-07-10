@@ -24,7 +24,7 @@ xSemaphoreHandle semaforo_mutex;
 TaskHandle_t handle_display;
 
 // Inicializa todos los perifericos y colas 
-void task_init(void *params) {
+void tarea_inic(void *params) {
     // Inicializo semáforos
     semaforo_buzzer = xSemaphoreCreateBinary();
     semaforo_usr = xSemaphoreCreateBinary();
@@ -69,7 +69,7 @@ void task_init(void *params) {
 }
 
 // Activa una secuencia de conversion cada 0.25 segundos
-void task_adc(void *params) {
+void tarea_adc(void *params) {
 
     while(1) {
         // Inicio una conversion
@@ -80,7 +80,7 @@ void task_adc(void *params) {
 }
 
 // Lee los valores de los botones para definir que valor mostrar
-void task_display_change(void *params) {
+void tarea_display_change(void *params) {
     // Dato para pasar
     display_variable_t variable = kDISPLAY_TEMP;
 
@@ -95,7 +95,7 @@ void task_display_change(void *params) {
 }
 
 // Escribe valores en el display
-void task_control(void *params) {
+void tarea_control(void *params) {
     // Variable a mostrar
     display_variable_t variable = kDISPLAY_TEMP;
     // Valores de ADC
@@ -121,7 +121,7 @@ void task_control(void *params) {
 }
 
 // Tarea que escribe un número en el display
-void task_display(void *params) {
+void tarea_display(void *params) {
     // Variable con el dato para escribir
     uint8_t data;
 
@@ -141,7 +141,7 @@ void task_display(void *params) {
 }
 
 // Actualiza el duty del PWM
-void task_pwm(void *params) {
+void tarea_pwm(void *params) {
     // Variable para guardar los datos del ADC
     adc_data_t data = {0};
 
@@ -166,7 +166,7 @@ void task_pwm(void *params) {
 }
 
 // Lee periodicamente el valor de intensidad luminica
-void task_bh1750(void *params) {
+void tarea_bh1750(void *params) {
     // Valor de intensidad luminica
     uint16_t lux = 0;
 
@@ -181,7 +181,7 @@ void task_bh1750(void *params) {
 }
 
 // Dibuja una animacion sobre el 7 segmentos
-void task_animation(void *params) {
+void tarea_animation(void *params) {
     // Segmentos usados
     gpio_t pins[] = { {SEG_A}, {SEG_B}, {SEG_C}, {SEG_D}, {SEG_E}, {SEG_F} };
 
@@ -208,7 +208,7 @@ void task_animation(void *params) {
 }
 
 // Tarea que parpadea el LED de acuerdo a la intensidad lumínica
-void task_blinky(void *params) {
+void tarea_blinky(void *params) {
     // Variable para guardar el tiempo en ms de bloqueo
     uint16_t blocking_time;
 
@@ -225,7 +225,7 @@ void task_blinky(void *params) {
 }
 
 // Tarea que hace sonar el buzzer
-void task_buzzer(void *params) {
+void tarea_buzzer(void *params) {
 
     while(1) {
         // Intenta tomar el semáforo
@@ -236,7 +236,7 @@ void task_buzzer(void *params) {
 }
 
 // Tarea que decrementa el contador
-void task_counter(void *params) {
+void tarea_contador(void *params) {
     while(1) {
         // Decrementa la cuenta cada un segundo
         xSemaphoreTake(semaforo_cont, 0);
@@ -245,7 +245,7 @@ void task_counter(void *params) {
 }
 
 // Tarea que manualmente controla el contador
-void task_counter_btns(void *params) {
+void tarea_contador_btns(void *params) {
 
     while(1) {
         // Intenta tomar el semáforo

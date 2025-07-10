@@ -83,12 +83,12 @@ extern "C" {
  *
  * This is an example.
  * @code
- *   COMMON_TASK_init();
+ *   COMMON_tarea_inic();
  * @endcode
  * @retval kStatus_COMMON_TASK_Success The common task initialization succeed.
  * @retval kStatus_COMMON_TASK_Error An error occurred when the common task is initialized.
  */
-common_task_status_t COMMON_TASK_init(void);
+common_task_status_t COMMON_tarea_inic(void);
 
 /*!
  * @brief De-initializes the common task module

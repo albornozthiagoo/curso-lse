@@ -3,9 +3,7 @@
 // Variable privada para registrar el evento del PWM
 static uint32_t pwm_bled_event = 0, pwm_rled_event = 0;
 
-/**
- * @brief Wrapper para inicializacion del ADC
- */
+// Inicialización del ADC
 void wrapper_adc_init(void) {
 	// Activo clock de matriz de conmutacion
 	CLOCK_EnableClock(kCLOCK_Swm);
@@ -49,9 +47,7 @@ void wrapper_adc_init(void) {
 	NVIC_EnableIRQ(ADC0_SEQA_IRQn);
 }
 
-/**
- * @brief Wrapper para inicializacion de los botones
- */
+// Inicialización de los botones
 void wrapper_btn_init(void) {
 	// Inicializo botones
 	gpio_pin_config_t config = { kGPIO_DigitalInput };
@@ -61,23 +57,24 @@ void wrapper_btn_init(void) {
 	}
 }
 
-/**
- * @brief Wrapper para habilitar una interrupción en una entrada
- * @param gpio estructura de GPIO
- * @param edge kPINT_PinIntEnableRiseEdge, kPINT_PinIntEnableFallEdge, kPINT_PinIntEnableBothEdges
- */
-void wrapper_gpio_enable_irq(gpio_t gpio, pint_pin_enable_t edge, pint_cb_t callback) {
+// Habilita una interrupción en una entrada
+void wrapper_gpio_enable_irq(gpio_t gpio, pint_pin_enable_t edge, pint_cb_t callback)
+{
     static uint32_t pint_n = 0;
-    if(pint_n == 0) { PINT_Init(PINT); }
+
+    if (pint_n == 0) {
+        PINT_Init(PINT);
+        PINT_SetCallback(PINT, callback);
+    }
+
     SYSCON->PINTSEL[pint_n] = wrapper_gpio_get_pin(gpio);
     PINT_PinInterruptConfig(PINT, (pint_pin_int_t)pint_n, edge);
-    PINT_EnableCallbackByIndex(PINT, (pint_pin_int_t)pint_n, callback);
+    PINT_EnableCallbackByIndex(PINT, (pint_pin_int_t)pint_n);
+
     pint_n++;
 }
 
-/**
- * @brief Wrapper para inicializacion del display 7 segmentos
- */
+// Inicializacion del display 7 segmentos
 void wrapper_display_init(void) {
 	// Inicializo los pines como salidas
 	gpio_pin_config_t config = { kGPIO_DigitalOutput, true };
@@ -87,11 +84,8 @@ void wrapper_display_init(void) {
 	}
 }
 
-/**
- * @brief Escribe el numero de un digito en el display
- * @param number es el numero que se quiere escribir
- */
-void wrapper_display_write(uint8_t number) {
+//Escribe el numero de un digito en el display
+void wrapper_display_write(uint8_t number) {	//number es el numero que se quiere escribir
 	// Array con valores para los pines
 	uint8_t values[] = { ~0x3f, ~0x6, ~0x5b, ~0x4f, ~0x66, ~0x6d, ~0x7d, ~0x7, ~0x7f, ~0x6f };
 	// Array con los segmentos
@@ -104,9 +98,7 @@ void wrapper_display_write(uint8_t number) {
 	}
 }
 
-/**
- * @brief Wrapper para inicializacion del PWM para el LED
- */
+//Inicializacion del PWM para el LED
 void wrapper_pwm_init(void) {
 	// Conecto la salida 4 del SCT al LED azul
     CLOCK_EnableClock(kCLOCK_Swm);
@@ -145,7 +137,7 @@ void wrapper_pwm_init(void) {
 			.dutyCyclePercent = 0					// Apagado
     };
 
-				// Inicializo el PWM
+		// Inicializo el PWM
     SCTIMER_SetupPwm(
 			SCT0,
 			&rled_pwm_config,
@@ -159,12 +151,7 @@ void wrapper_pwm_init(void) {
     SCTIMER_StartTimer(SCT0, kSCTIMER_Counter_U);
 }
 
-/**
- * @brief Wrapper privado para inicializar el PWM
- * @param out salida de SCTimer
- * @param duty ancho de pulso de 0 a 100
- * @param event número de evento del PWM
- */
+//Inicializar el PWM
 static void wrapper_pwm_update_led(sctimer_out_t out, int16_t duty, uint32_t event) {
 	// Verifico que no se haya excedido de los limites
 	if(duty < 0) { duty = 0; }
@@ -173,25 +160,19 @@ static void wrapper_pwm_update_led(sctimer_out_t out, int16_t duty, uint32_t eve
 	SCTIMER_UpdatePwmDutycycle(SCT0, out, duty, event);
 }
 
-/**
- * @brief Wrapper para actualizar el valor de duty del PWM del LED azul
- */
+//Actualizar el valor de duty del PWM del LED azul
 void wrapper_pwm_update_bled(int16_t duty) {
 	// Invoco al wrapper general
 	wrapper_pwm_update_led(kSCTIMER_Out_0, duty, pwm_bled_event);
 }
 
-/**
- * @brief Wrapper para actualizar el valor de duty del PWM del LED rojo
- */
+//Actualizar el valor de duty del PWM del LED rojo
 void wrapper_pwm_update_rled(int16_t duty) {
 	// Invoco al wrapper general
 	wrapper_pwm_update_led(kSCTIMER_Out_1, duty, pwm_rled_event);
 }
 
-/**
- * @brief Wrapper que inicializa el I2C
- */
+//Inicializa el I2C
 void wrapper_i2c_init(void) {
 	// Inicializo el clock del I2C1
 	CLOCK_Select(kI2C1_Clk_From_MainClk);
@@ -208,9 +189,7 @@ void wrapper_i2c_init(void) {
 	I2C_MasterInit(I2C1, &config, SystemCoreClock);
 }
 
-/**
- * @brief Wrapper que inicializa el BH1750
- */
+//Inicializa el BH1750
 void wrapper_bh1750_init(void) {
 	// Comandos
 	uint8_t cmd[] = { 0x01, 0x10 };
@@ -224,10 +203,7 @@ void wrapper_bh1750_init(void) {
 	I2C_MasterStop(I2C1);
 }
 
-/**
- * @brief Wrapper para lectura del BH1750 en modo continuo
- * @return intensidad luminica en luxes
- */
+//Lectura del BH1750 en modo continuo
 float wrapper_bh1750_read(void) {
 	// Resultado
 	uint8_t res[2] = {0};
@@ -239,9 +215,7 @@ float wrapper_bh1750_read(void) {
 	return ((res[0] << 8) + res[1]) / 1.2;
 }
 
-/**
- * @brief Wrapper que inicializa el pulsador capacitivo 
- */
+//Inicializa el pulsador capacitivo 
 void wrapper_touch_init(void) {
 	// Habilita las funciones de táctil capacitivo en los pines
 	CLOCK_EnableClock(kCLOCK_Swm);
@@ -273,9 +247,7 @@ void wrapper_touch_init(void) {
 	CAPT_SetPollMode(CAPT, kCAPT_PollContinuousMode);
 }
 
-/**
- * @brief Wrapper que obtiene si el táctil se presionó o no
- */
+//Wrapper que obtiene si el táctil se presionó o no
 bool wrapper_touch_is_touched(void) {
 	// Lee el valor del contador del táctil
 	capt_touch_data_t data;

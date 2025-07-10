@@ -43,7 +43,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "   -fstack-usage  -D__NEWLIB__       -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g     -include /Users/albornozthiago/Documents/UTN_2025/curso-lse/trabajo_integrador/integrador_tp/armgcc/../mcux_config.h     -DDEBUG     -D__STARTUP_CLEAR_BSS     -DMCUX_META_BUILD     -DMCUXPRESSO_SDK     -DCPU_LPC845M301JBD48     -DLPC845_SERIES     -g     -O0     -Wall     -fno-common     -ffunction-sections     -fdata-sections     -fno-builtin     -mthumb     -mapcs     -std=gnu99     -mcpu=cortex-m0plus     -mfloat-abi=soft     -DSDK_DEBUGCONSOLE=1 "
+					"fragment" : "   -fstack-usage  -D__NEWLIB__       -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g -O0 -g     -include /Users/albornozthiago/Documents/UTN_2025/curso-lse/trabajo_integrador/integrador_tp/armgcc/../mcux_config.h     -DDEBUG     -D__STARTUP_CLEAR_BSS     -DMCUX_META_BUILD     -DMCUXPRESSO_SDK     -DCPU_LPC845M301JBD48     -DLPC845_SERIES     -g     -O0     -Wall     -fno-common     -ffunction-sections     -fdata-sections     -fno-builtin     -mthumb     -mapcs     -std=gnu99     -mcpu=cortex-m0plus     -mfloat-abi=soft     -DSDK_DEBUGCONSOLE=1 "
 				}
 			],
 			"includes" : 

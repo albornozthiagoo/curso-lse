@@ -611,7 +611,7 @@ timer_status_t TM_Init(timer_config_t *timerConfig)
         s_timermanager.mUsInTimerInterval = halTimerConfig.timeout;
 #if defined(OSA_USED)
 #if (defined(TM_COMMON_TASK_ENABLE) && (TM_COMMON_TASK_ENABLE > 0U))
-        (void)COMMON_TASK_init();
+        (void)COMMON_tarea_inic();
 #else
         osa_status_t osaStatus;
 

@@ -63,10 +63,10 @@ typedef struct TaskControlBlock
     osa_task_priority_t priority; /*!< Task's priority                        */
     osa_task_param_t param;       /*!< Task's parameter                       */
     uint8_t haveToRun;            /*!< Task was signaled                      */
-} task_control_block_t;
+} tarea_control_block_t;
 
 /*! @brief Type for a task pointer */
-typedef task_control_block_t *task_handler_t;
+typedef tarea_control_block_t *task_handler_t;
 
 /*! @brief Type for a task stack */
 typedef uint32_t task_stack_t;
@@ -406,11 +406,11 @@ osa_status_t OSA_TaskSetPriority(osa_task_handle_t taskHandle, osa_task_priority
 {
     assert(taskHandle);
     list_element_handle_t list_element;
-    task_control_block_t *tcb = NULL;
+    tarea_control_block_t *tcb = NULL;
 #if (defined(GENERIC_LIST_LIGHT) && (GENERIC_LIST_LIGHT > 0U))
-    task_control_block_t *preTcb = NULL;
+    tarea_control_block_t *preTcb = NULL;
 #endif
-    task_control_block_t *ptaskStruct = (task_control_block_t *)taskHandle;
+    tarea_control_block_t *ptaskStruct = (tarea_control_block_t *)taskHandle;
     uint32_t regPrimask;
 
     ptaskStruct->priority = taskPriority;
@@ -419,7 +419,7 @@ osa_status_t OSA_TaskSetPriority(osa_task_handle_t taskHandle, osa_task_priority
     list_element = LIST_GetHead(&s_osaState.taskList);
     while (NULL != list_element)
     {
-        tcb = (task_control_block_t *)(void *)list_element;
+        tcb = (tarea_control_block_t *)(void *)list_element;
         if (ptaskStruct->priority <= tcb->priority)
         {
 #if (defined(GENERIC_LIST_LIGHT) && (GENERIC_LIST_LIGHT > 0U))
@@ -469,15 +469,15 @@ osa_status_t OSA_TaskCreate(osa_task_handle_t taskHandle, const osa_task_def_t *
 {
     list_element_handle_t list_element;
 
-    task_control_block_t *tcb = NULL;
+    tarea_control_block_t *tcb = NULL;
 #if (defined(GENERIC_LIST_LIGHT) && (GENERIC_LIST_LIGHT > 0U))
-    task_control_block_t *preTcb = NULL;
+    tarea_control_block_t *preTcb = NULL;
 #endif
     list_status_t listStatus;
 
-    task_control_block_t *ptaskStruct = (task_control_block_t *)taskHandle;
+    tarea_control_block_t *ptaskStruct = (tarea_control_block_t *)taskHandle;
     uint32_t regPrimask;
-    assert(sizeof(task_control_block_t) == OSA_TASK_HANDLE_SIZE);
+    assert(sizeof(tarea_control_block_t) == OSA_TASK_HANDLE_SIZE);
     assert(taskHandle);
 
     ptaskStruct->p_func    = thread_def->pthread;
@@ -488,7 +488,7 @@ osa_status_t OSA_TaskCreate(osa_task_handle_t taskHandle, const osa_task_def_t *
     list_element = LIST_GetHead(&s_osaState.taskList);
     while (NULL != list_element)
     {
-        tcb = (task_control_block_t *)(void *)list_element;
+        tcb = (tarea_control_block_t *)(void *)list_element;
         if (ptaskStruct->priority <= tcb->priority)
         {
             OSA_EnterCritical(&regPrimask);
@@ -1510,12 +1510,12 @@ void OSA_Start(void)
 void OSA_ProcessTasks(void)
 {
     list_element_handle_t list_element;
-    task_control_block_t *tcb;
+    tarea_control_block_t *tcb;
 
     list_element = LIST_GetHead(&s_osaState.taskList);
     while (NULL != list_element)
     {
-        tcb                       = (task_control_block_t *)(void *)list_element;
+        tcb                       = (tarea_control_block_t *)(void *)list_element;
         s_osaState.curTaskHandler = (osa_task_handle_t)tcb;
         if (0U != tcb->haveToRun)
         {
@@ -1542,12 +1542,12 @@ uint8_t OSA_TaskShouldYield(void)
 {
     list_element_handle_t list_element;
     uint8_t status = 0;
-    task_control_block_t *tcb;
+    tarea_control_block_t *tcb;
 
     list_element = LIST_GetHead(&s_osaState.taskList);
     while ((list_element != NULL))
     {
-        tcb = (task_control_block_t *)(void *)list_element;
+        tcb = (tarea_control_block_t *)(void *)list_element;
         if (1U == tcb->haveToRun)
         {
             status = 1U;
