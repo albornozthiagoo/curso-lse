@@ -74,5 +74,5 @@ El proyecto permitió integrar conocimientos de sistemas embebidos, FreeRTOS, si
 A continuación se muestra el diagrama general del sistema:
 
 <div align="center">
-  <img src="/Users/albornozthiago/Documents/UTN_2025/curso-lse/trabajo_integrador/archivos/Esquematico.png" alt="Descripción de la imagen" width=""/>
+  <img src="trabajo_integrador/archivos/Esquematico.png" alt="Descripción de la imagen" width=""/>
 </div>
