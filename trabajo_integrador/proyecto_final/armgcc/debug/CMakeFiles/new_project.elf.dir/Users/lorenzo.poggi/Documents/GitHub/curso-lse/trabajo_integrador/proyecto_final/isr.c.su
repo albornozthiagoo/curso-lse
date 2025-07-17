@@ -1,0 +1,7 @@
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/sdks/proyecto_final_sdk/devices/LPC845/drivers/./fsl_adc.h:770:24:ADC_GetStatusFlags	16	static
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/sdks/proyecto_final_sdk/devices/LPC845/drivers/./fsl_adc.h:781:20:ADC_ClearStatusFlags	16	static
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/sdks/proyecto_final_sdk/devices/LPC845/drivers/./fsl_capt.h:330:20:CAPT_ClearInterruptStatusFlags	16	static
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/isr.c:7:6:cny70_callback	24	static
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/isr.c:22:6:usr_callback	24	static
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/isr.c:36:6:ADC0_SEQA_IRQHandler	56	static
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/isr.c:64:6:CMP_CAPT_IRQHandler	16	static

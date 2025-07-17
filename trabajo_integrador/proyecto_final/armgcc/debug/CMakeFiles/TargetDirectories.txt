@@ -1,0 +1,6 @@
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/armgcc/debug/CMakeFiles/new_project.elf.dir
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/armgcc/debug/CMakeFiles/edit_cache.dir
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/armgcc/debug/CMakeFiles/rebuild_cache.dir
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/armgcc/debug/freertos/CMakeFiles/freertos.dir
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/armgcc/debug/freertos/CMakeFiles/edit_cache.dir
+/Users/lorenzo.poggi/Documents/GitHub/curso-lse/trabajo_integrador/proyecto_final/armgcc/debug/freertos/CMakeFiles/rebuild_cache.dir

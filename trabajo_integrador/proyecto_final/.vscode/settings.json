@@ -1,0 +1,13 @@
+{
+  "cmake.configureOnOpen": false,
+  "C_Cpp.errorSquiggles": "disabled",
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "cmake.useCMakePresets": "always",
+  "cmake.buildTask": true,
+  "cmake.skipConfigureIfCachePresent": true,
+  "cmake.sourceDirectory": "${workspaceFolder}/armgcc",
+  "idf.pythonInstallPath": "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
+  "files.associations": {
+    "task.h": "c"
+  }
+}
